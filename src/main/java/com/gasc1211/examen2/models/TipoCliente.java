@@ -3,6 +3,8 @@ package com.gasc1211.examen2.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,6 +33,7 @@ public class TipoCliente {
 
   private String descripcion;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "tipoCliente", cascade = CascadeType.ALL)
   private List<Cliente> clientes = new ArrayList<>();
 }

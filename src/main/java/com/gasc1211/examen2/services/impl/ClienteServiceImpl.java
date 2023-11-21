@@ -1,5 +1,7 @@
 package com.gasc1211.examen2.services.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,18 @@ public class ClienteServiceImpl implements ClienteService{
       }
       return this.clienteRepository.save(cliente);
     }
+    return null;
+  }
+
+  @Override
+  public List<Cliente> obtenerTodosClientes() {
+    return this.clienteRepository.findAll();
+  }
+
+  @Override
+  public Cliente buscarCliente(int codigoCliente) {
+    Cliente cliente = this.clienteRepository.findById(codigoCliente).get();
+    if (cliente != null) return cliente;
     return null;
   }
 }
