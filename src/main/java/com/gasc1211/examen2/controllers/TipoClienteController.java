@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gasc1211.examen2.models.TipoCliente;
@@ -17,7 +18,7 @@ public class TipoClienteController {
   private TipoClienteServiceImpl tipoClienteService;
 
   @PostMapping("/crear")
-  public TipoCliente crearTipoCliente(@RequestBody TipoCliente tipoCliente) {
-    return this.tipoClienteService.crearTipoCliente(tipoCliente);
+  public TipoCliente crearTipoCliente(@RequestParam(name = "descripcion") String descripcion) {
+    return this.tipoClienteService.crearTipoCliente(descripcion);
   }
 }
