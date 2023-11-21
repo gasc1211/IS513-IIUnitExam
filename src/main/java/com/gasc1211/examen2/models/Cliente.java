@@ -37,7 +37,6 @@ public class Cliente {
   @Column(name = "fechaingreso")
   private Date fechaIngreso;
 
-  @JsonIgnore
   @ManyToOne
   @JoinColumn(name = "idtipocliente", referencedColumnName = "idtipocliente")
   private TipoCliente tipoCliente;

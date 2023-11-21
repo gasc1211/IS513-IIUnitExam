@@ -34,7 +34,6 @@ public class Vehiculo {
 
   private boolean disponible;
 
-  @JsonIgnore
   @ManyToOne
   @JoinColumn(name = "idtipovehiculo", referencedColumnName = "idtipovehiculo")
   private TipoVehiculo tipoVehiculo;
